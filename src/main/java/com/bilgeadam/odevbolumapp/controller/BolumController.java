@@ -18,7 +18,7 @@ public class BolumController {
     private BolumRepository bolumRepository;
 
     @GetMapping("/bolum/{id}")
-    public Bolum getBolum(@PathVariable("id")long id)
+    public Bolum getBolum(@PathVariable("id") long id)
     {
         Bolum bolum = null;
         Optional<Bolum> bolumDB = bolumRepository.findById(id);
@@ -30,7 +30,7 @@ public class BolumController {
         }
         else
         {
-            throw new BolumNotFoundException(id + "nolu Bölüm bulunamadı!");
+            throw new BolumNotFoundException(id + " nolu Bölüm bulunamadı!");
         }
     }
 
@@ -50,6 +50,5 @@ public class BolumController {
         //return getBolum(id).getAd();
 
     }
-
 
 }
